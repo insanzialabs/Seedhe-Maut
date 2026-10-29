@@ -4,6 +4,7 @@ import path from 'node:path';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const output = path.join(root, 'dist');
+export const siteOrigin = 'https://seedhe-maut.insanzialabs.com';
 const read = name => readFile(path.join(root, name), 'utf8');
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -62,7 +63,8 @@ export async function build({ quiet = false } = {}) {
     await writeFile(destination, render(shell, {
       MAIN: main, INDEX_ITEMS: indexItems(list),
       PAGE_TITLE: escape(meta.title), PAGE_DESCRIPTION: escape(meta.description),
-      PAGE_IMAGE: escape(meta.image),
+      PAGE_IMAGE: escape(new URL(meta.image, siteOrigin).href),
+      PAGE_URL: escape(new URL(relative === 'index.html' ? '/' : '/' + relative.replace(/\/index\.html$/, ''), siteOrigin).href),
     }));
   };
   const makeGallery = (list, namespace) => render(gallery, {
@@ -116,6 +118,9 @@ export async function build({ quiet = false } = {}) {
     await writeFile(target, (await readFile(target, 'utf8')).replace('</body>', `${noScript}</body>`));
   }
   await writeFile(path.join(output, 'tracks.json'), JSON.stringify(tracks));
+  const urls = ['/', '/archive', ...tracks.map(route)];
+  await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${siteOrigin}${url}</loc></url>`).join('')}</urlset>\n`);
+  await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${siteOrigin}/sitemap.xml\n`);
   await writeFile(path.join(output, '404.html'), '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Song not found — Seedhe Maut</title><link rel="stylesheet" href="/adaptation.css"><body class="not-found"><main><p>404 / SEEDHE MAUT</p><h1>This track isn’t in the archive.</h1><a href="/">Back to the journey</a></main></body></html>');
   if (!quiet) console.log(`Built ${pages.length} pages and all local assets in dist/.`);
   return { tracks, pages };

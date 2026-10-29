@@ -12,6 +12,14 @@ npm run dev
 
 Open **http://127.0.0.1:4173**. `npm run build` produces a standalone static website in `dist/`; `npm start` serves that build. Static hosting must serve directory `index.html` files for `/archive` and `/songs/<slug>`.
 
+## Vercel
+
+The committed `vercel.json` selects the static framework, runs `npm run build` and publishes `dist/`. The `public/` directory contains assets only; publishing it instead of the generated output causes a platform 404 at `/`.
+
+Import this repository with its root as the Vercel Root Directory (the folder containing `package.json` and `vercel.json`). Redeploy after pushing configuration changes. Do not set the output to `public` or run the local Node server as a serverless function.
+
+Production domain: **https://seedhe-maut.insanzialabs.com**. Add that hostname under the Vercel project's Domains settings, and apply the DNS record Vercel supplies. This local configuration does not create a domain assignment or change DNS.
+
 ## Experience
 
 - **Journey:** chronological disc gallery, 2017 → 2026.
