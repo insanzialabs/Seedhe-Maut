@@ -1,0 +1,16 @@
+{
+  "name": "seedhe-maut-disc-archive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ten chapters of Seedhe Maut, adapted from Ravi Klaassens' A24 disc experience.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs --dev",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

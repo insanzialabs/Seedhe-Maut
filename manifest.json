@@ -1,0 +1,123 @@
+[
+  {
+    "chapter": 1,
+    "year": "2017",
+    "title": "SEEDHE MAUT ANTHEM",
+    "artists": "Seedhe Maut, Sez on the Beat",
+    "producer": "Sez on the Beat",
+    "streams": "~0.85M",
+    "era": "THE ARRIVAL",
+    "desc": "Two battle rappers became a duo. Their first official statement of intent.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2731608bb0890c0ac8a1898159e",
+    "file": "frames/2017_seedhe_maut_anthem.svg"
+  },
+  {
+    "chapter": 2,
+    "year": "2018",
+    "title": "PANKH",
+    "artists": "Seedhe Maut, Sez on the Beat, Bawari Basanti",
+    "producer": "Sez on the Beat",
+    "streams": "~3.93M",
+    "era": "THE BAYAAN",
+    "desc": "Bayaan turned raw battle-rap chemistry into a complete artistic identity.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2732aad402cad410aa77ca4509f",
+    "file": "frames/2018_pankh.svg"
+  },
+  {
+    "chapter": 3,
+    "year": "2019",
+    "title": "101",
+    "artists": "Seedhe Maut",
+    "producer": "Calm",
+    "streams": "~12.6M",
+    "era": "THE IDENTITY",
+    "desc": "Less proving themselves. More knowing exactly who Seedhe Maut had become.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273d8bec03d3282930d9138426a",
+    "file": "frames/2019_101.svg"
+  },
+  {
+    "chapter": 4,
+    "year": "2020",
+    "title": "ROSHNI",
+    "artists": "Sickflip, Ritviz, Seedhe Maut",
+    "producer": "Sickflip & Ritviz",
+    "streams": "~9.82M",
+    "era": "THE EXPANSION",
+    "desc": "Melody, electronics and introspection widened the world around their rap.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273778a949461d91432a7fa5514",
+    "file": "frames/2020_roshni.svg"
+  },
+  {
+    "chapter": 5,
+    "year": "2021",
+    "title": "NANCHAKU",
+    "artists": "Seedhe Maut, MC STAN",
+    "producer": "Calm",
+    "streams": "63.7M+",
+    "era": "THE BREAKOUT",
+    "desc": "Two scenes collided. The underground suddenly sounded enormous.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b27371443b0e25118f867e9e0a81",
+    "file": "frames/2021_nanchaku.svg"
+  },
+  {
+    "chapter": 6,
+    "year": "2022",
+    "title": "नALLA FREESTYLE",
+    "artists": "Seedhe Maut, DJ Sa",
+    "producer": "DJ Sa",
+    "streams": "~19.6M",
+    "era": "THE COST OF SUCCESS",
+    "desc": "Success arrived. So did pressure, scrutiny and everything that came with it.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273c834e1097492fcc1d7fda8d4",
+    "file": "frames/2022_नalla_freestyle.svg"
+  },
+  {
+    "chapter": 7,
+    "year": "2023",
+    "title": "KHATTA FLOW",
+    "artists": "Seedhe Maut, KR$NA",
+    "producer": "Calm",
+    "streams": "74.9M+",
+    "era": "THE TAKEOVER",
+    "desc": "Lunch Break was not a break. It was a declaration of dominance.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273486e6745e64f8a48b9347650",
+    "file": "frames/2023_khatta_flow.svg"
+  },
+  {
+    "chapter": 8,
+    "year": "2024",
+    "title": "RAAT KI RANI",
+    "artists": "Seedhe Maut",
+    "producer": "Calm",
+    "streams": "62.2M+",
+    "era": "THE EVOLUTION",
+    "desc": "They did not get softer. They learned another musical language.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2739750614dd177fa9137726f07",
+    "file": "frames/2024_raat_ki_rani.svg"
+  },
+  {
+    "chapter": 9,
+    "year": "2025",
+    "title": "MADIRA",
+    "artists": "Seedhe Maut, Hurricane, DL91 Era",
+    "producer": "Hurricane",
+    "streams": "24.1M+",
+    "era": "THE EMPIRE",
+    "desc": "From surviving the scene to building an ecosystem of their own.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273a9e75a1283dfda275de82714",
+    "file": "frames/2025_madira.svg"
+  },
+  {
+    "chapter": 10,
+    "year": "2026",
+    "title": "BUZZ",
+    "artists": "Seedhe Maut, KR$NA",
+    "producer": "Calm",
+    "streams": "230K+*",
+    "era": "TEN YEARS LATER",
+    "desc": "A decade in, the duo still sounds restless, current and impossible to ignore.",
+    "cover": "https://i.scdn.co/image/ab67616d0000b27367a47de2b428d13787981403",
+    "footnote": "*Spotify snapshot, Oct 28 2026 — released Oct 23, 2026.",
+    "file": "frames/2026_buzz.svg"
+  }
+]

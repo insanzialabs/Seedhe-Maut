@@ -1,0 +1,55 @@
+/* Music-specific adaptations. Source geometry and choreography live in vendor/reference.css. */
+.sm-logo {
+  display: block;
+  width: 1.5em;
+  height: 1.1em;
+  background: currentColor;
+  -webkit-mask: url('/images/seedhe-maut.svg') center / contain no-repeat;
+  mask: url('/images/seedhe-maut.svg') center / contain no-repeat;
+}
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
+}
+[data-disc-gallery]:focus:not(:focus-visible) { outline: none; }
+.description-vector__img-wrap img { mix-blend-mode: multiply; }
+.player-external {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: 5em;
+  transform: translateX(-50%);
+  font: 500 .625rem / 1.4 Ppneuemontreal, Arial, sans-serif;
+  letter-spacing: .12em;
+  color: #eee;
+  text-underline-offset: .3em;
+  opacity: .7;
+}
+.player-external:hover, .player-external:focus-visible { opacity: 1; }
+[data-trailer-status='not-active'] .player-external,
+[data-trailer-status='closed'] .player-external { visibility: hidden; }
+.gallery-fallback {
+  position: relative;
+  z-index: 5;
+  padding: 6rem 1rem 2rem;
+  min-height: 100svh;
+}
+[hidden] { display: none !important; }
+.fallback-note { max-width: 35rem; margin: 1rem 0 2rem; }
+.fallback-tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
+.fallback-tracks a { display: grid; gap: .5rem; text-decoration: none; }
+.fallback-tracks img { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+.fallback-tracks small { opacity: .6; }
+.gallery-has-fallback .experience_wrap, .gallery-has-fallback .experience-canvas { display: none; }
+.gallery-has-fallback { overflow: auto !important; }
+.no-script, .not-found { padding: 3rem; font-family: Arial, sans-serif; background: #eee; color: #111; }
+.no-script > a { display: inline-grid; width: 160px; gap: .5rem; margin: 1rem; vertical-align: top; }
+.no-script img { width: 100%; height: auto; }
+@media (max-width: 767px) {
+  .player-external { bottom: 7.5em; font-size: .6rem; }
+  .fallback-tracks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none !important; }
+}
