@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, cp, rm, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -54,6 +54,11 @@ export async function build({ quiet = false } = {}) {
   if (tracks.length !== 10 || new Set(tracks.map(track => track.slug)).size !== 10) {
     throw new Error('The archive must contain ten uniquely routed chapters.');
   }
+  for (const track of tracks) {
+    if (!track.audio?.startsWith('/music/') || !(await stat(path.join(root, 'public', track.audio))).isFile()) {
+      throw new Error(`Missing prepared recording for ${track.title}. Run scripts/prepare-music.py locally.`);
+    }
+  }
   await rm(output, { recursive: true, force: true });
   await mkdir(output, { recursive: true });
   await cp(path.join(root, 'public'), output, { recursive: true });
@@ -65,6 +70,7 @@ export async function build({ quiet = false } = {}) {
       PAGE_TITLE: escape(meta.title), PAGE_DESCRIPTION: escape(meta.description),
       PAGE_IMAGE: escape(new URL(meta.image, siteOrigin).href),
       PAGE_URL: escape(new URL(relative === 'index.html' ? '/' : '/' + relative.replace(/\/index\.html$/, ''), siteOrigin).href),
+      MUSIC_DATA: JSON.stringify(tracks.map(({ slug, title, audio }) => ({ slug, title, audio }))).replace(/</g, '\\u003c'),
     }));
   };
   const makeGallery = (list, namespace) => render(gallery, {
@@ -102,7 +108,7 @@ export async function build({ quiet = false } = {}) {
         (track.footnote ? paragraph(track.footnote, 'subheading-xs') : ''),
       NEXT_ITEMS: tracks.map(nextItem).join(''), NEXT_TITLE: escape(next.title), NEXT_URL: route(next),
     });
-    await page(`songs/${track.slug}/index.html`, main, {
+    await page(`songs/${track.slug}/index.html`, main.replace('<main ', `<main data-song-slug="${track.slug}" `), {
       title: `${track.title} — Seedhe Maut`, description: track.desc, image: track.artwork,
     });
   }
@@ -113,7 +119,7 @@ export async function build({ quiet = false } = {}) {
     const content = track
       ? `<h1>${escape(track.title)}</h1><p>${escape(track.desc)}</p><img src="${track.artwork}" alt="Official cover" width="320" height="320" style="max-width:320px"><p><a href="${video(track)}">Listen on YouTube</a> · <a href="${track.spotify}">Listen on Spotify</a></p><p><a href="/">All ten chapters</a></p>`
       : `<h1>Seedhe Maut — Ten Chapters</h1><p>Enable JavaScript for the interactive disc experience, or choose a song below.</p>${fallbackItems(tracks)}`;
-    const noScript = `<noscript><style>main[data-barba="container"]{display:none!important}.nav{display:none!important}</style><main class="no-script">${content}</main></noscript>`;
+    const noScript = `<noscript><style>main[data-barba="container"]{display:none!important}.nav,.disc-sound{display:none!important}</style><main class="no-script">${content}</main></noscript>`;
     const target = path.join(output, file);
     await writeFile(target, (await readFile(target, 'utf8')).replace('</body>', `${noScript}</body>`));
   }

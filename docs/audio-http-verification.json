@@ -1,0 +1,66 @@
+{
+  "tracks": [
+    {
+      "slug": "seedhe-maut-anthem",
+      "headStatus": 200,
+      "bytes": 953514,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "pankh",
+      "headStatus": 200,
+      "bytes": 1541792,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "101",
+      "headStatus": 200,
+      "bytes": 3952371,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "roshni",
+      "headStatus": 200,
+      "bytes": 1700616,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "nanchaku",
+      "headStatus": 200,
+      "bytes": 3706820,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "nalla-freestyle",
+      "headStatus": 200,
+      "bytes": 2974347,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "khatta-flow",
+      "headStatus": 200,
+      "bytes": 2978004,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "raat-ki-rani",
+      "headStatus": 200,
+      "bytes": 3675996,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "madira",
+      "headStatus": 200,
+      "bytes": 2199555,
+      "rangeStatus": 206
+    },
+    {
+      "slug": "buzz",
+      "headStatus": 200,
+      "bytes": 4361449,
+      "rangeStatus": 206
+    }
+  ],
+  "suffixStatus": 206,
+  "invalidRangeStatus": 416
+}

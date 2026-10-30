@@ -11,7 +11,7 @@ Local runtime changes are limited to the S10 loader label and 2017–2026 range,
 
 The source bundles GSAP (including CustomEase, ScrollTrigger and SplitText), Lenis, Barba.js and Three.js. Original embedded license notices are retained. The supplied PP Eiko, PP Museum and PP Neue Montreal font files are copied from the reference’s public font assets. Font and source-asset rights remain with their respective owners.
 
-Song covers come from the Spotify artwork URLs in the user-supplied manifest. Detail-page stills are official YouTube release thumbnails. Audio/video is embedded through YouTube’s player rather than redistributed. Spotify buttons point directly to the relevant track.
+Song covers come from the Spotify artwork URLs in the user-supplied manifest. Detail-page stills are official YouTube release thumbnails. The CD soundtrack uses the ten recordings subsequently supplied in `assets/music/`, with web playback copies prepared in `public/music/`. The separate video overlay uses YouTube’s player. Spotify buttons point directly to the relevant track.
 
 The official Seedhe Maut logo is sourced from:
 https://www.seedhemaut.com/wp-content/uploads/2025/08/Sm-header-logo.svg

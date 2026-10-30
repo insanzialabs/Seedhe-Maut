@@ -16,7 +16,9 @@
     "caption": "Two voices. One statement.",
     "artwork": "/artwork/2017.jpg",
     "still": "/images/seedhe-maut-anthem.jpg",
-    "spotify": "https://open.spotify.com/track/4Zn5m7S8I9LylKtc6yq5MI"
+    "spotify": "https://open.spotify.com/track/4Zn5m7S8I9LylKtc6yq5MI",
+    "audio": "/music/seedhe-maut-anthem.mp3",
+    "audioDuration": 47.612
   },
   {
     "chapter": 2,
@@ -35,7 +37,9 @@
     "caption": "A new way to fly.",
     "artwork": "/artwork/2018.jpg",
     "still": "/images/pankh.jpg",
-    "spotify": "https://open.spotify.com/track/6PibmW1KLc0EWYXP8mx2I6"
+    "spotify": "https://open.spotify.com/track/6PibmW1KLc0EWYXP8mx2I6",
+    "audio": "/music/pankh.mp3",
+    "audioDuration": 77.032
   },
   {
     "chapter": 3,
@@ -54,7 +58,9 @@
     "caption": "A language of their own.",
     "artwork": "/artwork/2019.jpg",
     "still": "/images/101.jpg",
-    "spotify": "https://open.spotify.com/track/1oLlXjLd8oopIxpoWu6bHN"
+    "spotify": "https://open.spotify.com/track/1oLlXjLd8oopIxpoWu6bHN",
+    "audio": "/music/101.mp3",
+    "audioDuration": 197.552
   },
   {
     "chapter": 4,
@@ -73,7 +79,9 @@
     "caption": "Find your own light.",
     "artwork": "/artwork/2020.jpg",
     "still": "/images/roshni.jpg",
-    "spotify": "https://open.spotify.com/track/0MZ6NFEV7oQSDMzuXBVS5E"
+    "spotify": "https://open.spotify.com/track/0MZ6NFEV7oQSDMzuXBVS5E",
+    "audio": "/music/roshni.mp3",
+    "audioDuration": 84.956
   },
   {
     "chapter": 5,
@@ -92,7 +100,9 @@
     "caption": "Two scenes. One collision.",
     "artwork": "/artwork/2021.jpg",
     "still": "/images/nanchaku.jpg",
-    "spotify": "https://open.spotify.com/track/6btegcu44HqquqArljhFxu"
+    "spotify": "https://open.spotify.com/track/6btegcu44HqquqArljhFxu",
+    "audio": "/music/nanchaku.mp3",
+    "audioDuration": 185.275
   },
   {
     "chapter": 6,
@@ -111,7 +121,9 @@
     "caption": "Nothing left to prove.",
     "artwork": "/artwork/2022.jpg",
     "still": "/images/nalla-freestyle.jpg",
-    "spotify": "https://open.spotify.com/track/1MGGL4HhGkixTKXpNj43Zb"
+    "spotify": "https://open.spotify.com/track/1MGGL4HhGkixTKXpNj43Zb",
+    "audio": "/music/nalla-freestyle.mp3",
+    "audioDuration": 148.651
   },
   {
     "chapter": 7,
@@ -130,7 +142,9 @@
     "caption": "The sound of a takeover.",
     "artwork": "/artwork/2023.jpg",
     "still": "/images/khatta-flow.jpg",
-    "spotify": "https://open.spotify.com/track/2qb5ASYergjk2qNLvYEQJD"
+    "spotify": "https://open.spotify.com/track/2qb5ASYergjk2qNLvYEQJD",
+    "audio": "/music/khatta-flow.mp3",
+    "audioDuration": 148.829
   },
   {
     "chapter": 8,
@@ -149,7 +163,9 @@
     "caption": "After dark. Beyond borders.",
     "artwork": "/artwork/2024.jpg",
     "still": "/images/raat-ki-rani.jpg",
-    "spotify": "https://open.spotify.com/track/1alInstEk6TQMuPyjCgI4K"
+    "spotify": "https://open.spotify.com/track/1alInstEk6TQMuPyjCgI4K",
+    "audio": "/music/raat-ki-rani.mp3",
+    "audioDuration": 183.733
   },
   {
     "chapter": 9,
@@ -168,7 +184,9 @@
     "caption": "Building their own world.",
     "artwork": "/artwork/2025.jpg",
     "still": "/images/madira.jpg",
-    "spotify": "https://open.spotify.com/track/3ue7PTXmpCbn3LXfkZWxll"
+    "spotify": "https://open.spotify.com/track/3ue7PTXmpCbn3LXfkZWxll",
+    "audio": "/music/madira.mp3",
+    "audioDuration": 109.911
   },
   {
     "chapter": 10,
@@ -188,6 +206,8 @@
     "caption": "Still hungry. Still here.",
     "artwork": "/artwork/2026.jpg",
     "still": "/images/buzz.jpg",
-    "spotify": "https://open.spotify.com/track/1bcfGgCTDiIH2RYB2wL622"
+    "spotify": "https://open.spotify.com/track/1bcfGgCTDiIH2RYB2wL622",
+    "audio": "/music/buzz.mp3",
+    "audioDuration": 217.996
   }
 ]

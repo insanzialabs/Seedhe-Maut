@@ -7,6 +7,33 @@
   -webkit-mask: url('/images/seedhe-maut.svg') center / contain no-repeat;
   mask: url('/images/seedhe-maut.svg') center / contain no-repeat;
 }
+.disc-sound {
+  position: fixed;
+  z-index: 45;
+  left: max(.75rem, env(safe-area-inset-left));
+  bottom: max(.75rem, env(safe-area-inset-bottom));
+  color: #111;
+  background: #eee;
+  transition: opacity .2s ease;
+}
+.disc-sound button {
+  display: block;
+  border: 0;
+  border-top: 1px solid currentColor;
+  padding: .6rem .15rem .25rem;
+  background: transparent;
+  color: inherit;
+  font: 500 .625rem / 1 Ppneuemontreal, Arial, sans-serif;
+  letter-spacing: .12em;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 108px;
+}
+.disc-sound button:disabled { opacity: .5; cursor: default; }
+html[data-trailer-open='true'] .disc-sound { opacity: 0; pointer-events: none; }
+@media (max-width: 767px) {
+  .disc-sound { bottom: max(5.25rem, calc(env(safe-area-inset-bottom) + 4.75rem)); }
+}
 button, a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   outline: 1px solid currentColor;

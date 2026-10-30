@@ -1,5 +1,7 @@
-// The original motion runtime owns rendering, gesture physics, navigation and playback.
-// This module adds only content-specific accessibility, recovery and external media links.
+import { installSoundtrack } from './soundtrack.js';
+
+// Motion and audio meet through public lifecycle events; the vendor runtime stays intact.
+const soundtrack = installSoundtrack();
 const galleries = new WeakSet();
 const player = document.querySelector('[data-trailer-lightbox]');
 const externalPlayerLink = player?.querySelector('[data-player-external]');
@@ -66,6 +68,7 @@ if (player) {
 enhancePage();
 try {
   await import('./vendor/bootstrap.dru0MhUJ.js');
+  if (window.barba) soundtrack.connect(window.barba);
   window.barba?.hooks.afterEnter(data => enhancePage(data.next.container));
   enhancePage();
 } catch (error) {
