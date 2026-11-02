@@ -104,7 +104,7 @@ export async function build({ quiet = false } = {}) {
       CREDITS: credit('ARTISTS', track.artists.split(', ')) + credit('PRODUCED BY', [track.producer]),
       SPOTIFY: escape(track.spotify), YOUTUBE: escape(video(track)), STILL: track.still,
       CAPTION: escape(track.caption), DESCRIPTION: escape(track.desc),
-      DETAIL_NOTES: notes.map(([label, value]) => `${paragraph(label, 'subheading-xs')}${paragraph(value)}`).join('') +
+      DETAIL_NOTES: notes.map(([label, value]) => `<div class="song-meta-group">${paragraph(label, 'subheading-xs')}${paragraph(value)}</div>`).join('') +
         (track.footnote ? paragraph(track.footnote, 'subheading-xs') : ''),
       NEXT_ITEMS: tracks.map(nextItem).join(''), NEXT_TITLE: escape(next.title), NEXT_URL: route(next),
     });

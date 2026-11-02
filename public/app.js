@@ -1,4 +1,7 @@
 import { installSoundtrack } from './soundtrack.js';
+import { playLogoIntro } from './logo-intro.js';
+
+await playLogoIntro();
 
 // Motion and audio meet through public lifecycle events; the vendor runtime stays intact.
 const soundtrack = installSoundtrack();
