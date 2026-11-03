@@ -1,4 +1,44 @@
 /* Music-specific adaptations. Source geometry and choreography live in vendor/reference.css. */
+.project-intro { display: none; }
+html[data-logo-intro] { overflow: hidden; }
+html[data-logo-intro] :is(.page-wrapper, .disc-sound) { visibility: hidden; }
+html[data-logo-intro] .project-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: #080808;
+}
+.project-intro__stage {
+  position: relative;
+  width: clamp(180px, 28vw, 320px);
+  isolation: isolate;
+}
+.project-intro__stage::before {
+  content: '';
+  position: absolute;
+  inset: -22%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(221 20 22 / .22), transparent 68%);
+  animation: project-logo-pulse 2.9s ease-out both;
+}
+.project-intro__logo {
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+@keyframes project-logo-pulse {
+  from { opacity: 0; transform: scale(.7); }
+  55% { opacity: 1; }
+  to { opacity: .4; transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-intro__stage::before { animation: none; }
+}
 .sm-logo {
   display: block;
   width: 1.5em;
@@ -40,7 +80,155 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   outline-offset: 5px;
 }
 [data-disc-gallery]:focus:not(:focus-visible) { outline: none; }
+/* Only the home Journey gallery owns the concert backdrop, never Archive or songs. */
+main[data-barba-namespace='films'] > .hero {
+  --_theme---body-text: #f2f2f2;
+  background-color: #000;
+  background-size: cover;
+  background-position: 47% 50%;
+  background-repeat: no-repeat;
+  color: #f2f2f2;
+  isolation: isolate;
+}
+main[data-barba-namespace='films'] > .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url('/images/seedhe-maut-concert-bg.png');
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  opacity: .45;
+}
+main[data-barba-namespace='films'] > .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / .025), transparent 38%, transparent 65%, rgb(0 0 0 / .015)),
+    linear-gradient(180deg, rgb(0 0 0 / .025), transparent 28%, transparent 57%, rgb(0 0 0 / .025)),
+    radial-gradient(ellipse at 47% 43%, transparent 28%, rgb(0 0 0 / .02) 100%);
+}
+main[data-barba-namespace='films'] .experience_wrap {
+  text-shadow: 0 1px 2px rgb(0 0 0 / .85), 0 2px 12px rgb(0 0 0 / .5);
+}
+/* Feathered frost follows the text groups instead of covering the concert. */
+main[data-barba-namespace='films'] :is(.experience_info, .testimonial_wrap) {
+  position: relative;
+  isolation: isolate;
+}
+main[data-barba-namespace='films'] :is(.experience_info, .testimonial_wrap)::before {
+  content: '';
+  position: absolute;
+  inset: -1.5rem;
+  z-index: -1;
+  pointer-events: none;
+  background: rgb(0 0 0 / .025);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: radial-gradient(ellipse, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse, #000 25%, transparent 72%);
+}
+main[data-barba-namespace='films'] .experience_info .heading-s {
+  font-size: calc(var(--_headings---heading-s--font-size) * 1.18);
+  font-weight: 600;
+}
+main[data-barba-namespace='films'] .info-content .paragraph-m {
+  font-size: calc(var(--_paragraphs---paragraph-m--font-size) * 1.13);
+  font-weight: 600;
+}
+main[data-barba-namespace='films'] .info-content .subheading-xs {
+  font-size: calc(var(--_subheadings---subheading-xs--font-size) * 1.08);
+  font-weight: 500;
+}
+/* Desktop navigation floats over the photograph; the mobile white dock stays intact. */
+@media (min-width: 992px) {
+  body:has(main[data-barba-namespace='films']) .nav:not([data-nav-dropdown='open']) {
+    --_theme---navigation--nav-text: #f2f2f2;
+    text-shadow: 0 1px 8px rgb(0 0 0 / .6);
+  }
+}
+@media (max-width: 991px) {
+  main[data-barba-namespace='films'] > .hero {
+    background-position: 46% 50%;
+  }
+}
+@media (max-width: 767px) {
+  main[data-barba-namespace='films'] > .hero {
+    background-position: 45% 50%;
+  }
+  main[data-barba-namespace='films'] :is(.experience_info, .testimonial_wrap)::before {
+    inset: -.75rem;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
 .description-vector__img-wrap img { mix-blend-mode: multiply; }
+/* Shared song introduction: retain the outer grid and its intentional empty space. */
+.production-description .description-content {
+  padding-inline: clamp(.75rem, 1.2vw, 1.5rem);
+}
+.production-description .description__synopsis,
+.production-description .description__awards-wrap {
+  position: relative;
+  top: 1rem;
+  min-width: 0;
+}
+.production-description .description__synopsis > p {
+  font-size: clamp(1.625rem, 1.95vw, 1.875rem);
+  line-height: 1.2;
+  max-width: 35rem;
+  text-wrap: pretty;
+}
+.production-description .description__awards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .875rem 1.25rem;
+  align-items: start;
+  width: 100%;
+  max-width: 38rem;
+  margin-block: 0;
+}
+.song-meta-group {
+  display: grid;
+  align-content: start;
+  gap: .25rem;
+  min-width: 0;
+}
+.song-meta-group > p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.production-description .description__awards > p {
+  grid-column: 1 / -1;
+}
+@media (min-width: 992px) {
+  .production-description .description-content {
+    /* Keep the original two-line intro footprint; metadata uses the existing whitespace. */
+    grid-template-rows: 5.2em auto;
+  }
+}
+@media (max-width: 991px) {
+  .production-description .description__synopsis > p {
+    font-size: clamp(1.375rem, 2.65vw, 1.625rem);
+  }
+  .production-description .description__awards-wrap {
+    margin-top: 5.5em;
+  }
+}
+@media (max-width: 767px) {
+  .production-description .description__synopsis > p {
+    font-size: clamp(1.125rem, 3.3vw, 1.375rem);
+  }
+  .production-description .description__awards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+  }
+}
 .player-external {
   position: absolute;
   z-index: 8;
